@@ -1,0 +1,5 @@
+getComputerChoice()
+1. create a list called choices that contains "rock", "paper", and "scissors"
+2. create a variable called randomNumber of type number that starts with a random number between 0 and 2
+3. return an item at index randomNumber of choices
+
