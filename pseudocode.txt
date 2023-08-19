@@ -26,10 +26,12 @@ DEFINE playRound(playerSelection, computerSelection) =>  UNDEFINED
     create a constant variable called winner of type string that contains results from getWinner()
 
     if playerSelection === computerSelection then
-        console log "It's a draw"
+        output "It's a draw"
 
     else if winner === "computer" then
-        console log "You lose! ${computerSelection} beats ${playerSelection}"
+        output "You lose! ${computerSelection} beats ${playerSelection}"
 
-    else console log "You win! ${playerSelection} beats ${computerSelection}"
+    else output "You win! ${playerSelection} beats ${computerSelection}"
 END
+
+DEFINE getUserHandShape() => string
