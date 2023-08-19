@@ -28,3 +28,19 @@ const getWinner = (playerSelection, computerSelection) => {
     ) return "player";
 }
 
+// create a function called playRound that takes in playerSelection and computerSelection and returns a string that declares the winner
+const playRound = (playerSelection, computerSelection) => {
+  const winner = getWinner(playerSelection, computerSelection);
+
+  if (playerSelection === computerSelection) {
+    console.log("It's a draw");
+  }
+  
+  else if (winner === "computer") {
+    console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
+  }
+  
+  else {
+    console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+  }
+}
