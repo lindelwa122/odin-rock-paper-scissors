@@ -26,13 +26,15 @@ const getWinner = (playerSelection, computerSelection) => {
       || (computerSelection === "paper" && playerSelection == "scissors")
       || (computerSelection === "scissors" && playerSelection === "rock")
     ) return "player";
+
+  else return "draw";
 }
 
 // create a function called playRound that takes in playerSelection and computerSelection and returns a string that declares the winner
 const playRound = (playerSelection, computerSelection) => {
   const winner = getWinner(playerSelection, computerSelection);
 
-  if (playerSelection === computerSelection) {
+  if (winner === "draw") {
     console.log("It's a draw");
   }
   
