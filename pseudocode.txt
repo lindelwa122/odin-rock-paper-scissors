@@ -35,3 +35,13 @@ DEFINE playRound(playerSelection, computerSelection) =>  UNDEFINED
 END
 
 DEFINE getUserHandShape() => string
+    create a variable called userChosenHandShape of type string
+    create a list called handShapes that contains "rock", "paper", "scissors"
+    repeatedly run a while loop 
+        ask the user "Indicate your hand shape?" and store the answer in userChosenHandShape
+            if userChosenHandShape is in handShapes
+                break out of the loop
+
+    return userChosenHandShape
+END
+

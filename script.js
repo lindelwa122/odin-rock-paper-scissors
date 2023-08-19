@@ -44,3 +44,23 @@ const playRound = (playerSelection, computerSelection) => {
     console.log(`You win! ${playerSelection} beats ${computerSelection}`);
   }
 }
+
+const getUserHandShape = () => {
+  let userChosenHandShape;
+
+  const handShapes = ["rock", "paper", "scissors"];
+
+  // repeatedly run a while loop 
+  while (true) {
+    // ask the user "Indicate your hand shape?" and store the answer in userChosenHandShape
+    userChosenHandShape = prompt("Indicate your hand shape?");
+
+    // if userChosenHandShape is in handShapes
+    if (handShapes.includes(userChosenHandShape)) {
+      // break out of the loop
+      break;
+    }
+  }
+
+  return userChosenHandShape;
+}
