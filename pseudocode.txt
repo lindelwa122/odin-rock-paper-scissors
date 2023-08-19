@@ -3,3 +3,17 @@ getComputerChoice()
 2. create a variable called randomNumber of type number that starts with a random number between 0 and 2
 3. return an item at index randomNumber of choices
 
+create a function called getWinner that takes in playerSelection and computerSelection and returns a string that declares the winner
+getWinner(playerSelection, computerSelection)
+
+1. if (computerSelection === "rock" and playerSelection === "scissors"
+   or computerSelection === "paper" and playerSelection === "rock"
+   or computerSelection === "scissors" and playerSelection === "paper") then
+   
+    return "computer"
+
+2. else if (computerSelection === "rock" and playerSelection === "paper"
+   or computerSelection === "paper" and playerSelection === "scissors"
+   or computerSelection === "scissors" and playerSelection === "rock") then
+
+    return "player"
