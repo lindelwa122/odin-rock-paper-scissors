@@ -34,6 +34,8 @@ DEFINE playRound(playerSelection, computerSelection) =>  UNDEFINED
     else output "You win! ${playerSelection} beats ${computerSelection}"
 END
 
+=================================================================
+
 DEFINE getUserHandShape() => string
     create a variable called userChosenHandShape of type string
     create a list called handShapes that contains "rock", "paper", "scissors"
@@ -45,3 +47,27 @@ DEFINE getUserHandShape() => string
     return userChosenHandShape
 END
 
+=================================================================
+
+DEFINE game() => undefined 
+    create a variable called computerScore of type number that starts with 0
+    create a variable called playerScore of type number that starts with 0
+    create a variable called computerSelection of type string that starts empty
+    create a variable called playerSelection of type string that starts empty
+    create a variable called winner of type string that starts empty
+    begin with i at 0 and add 1 to i on each pass until i is larger than or equal to 5
+        assign getComputerChoice() to variable computerSelection
+        assign getUserHandShape() to variable playerSelection
+        invoke playRound with inputs (playerSelection, computerSelection)
+        assign getWinner(playerSelection, computerSelection) to variable winner
+        if winner === "computer" then increment computerScore with 1
+        else if winner === "player" then increment playerScore with 1
+
+    if computerScore !== playerScore then
+        assign "computer" to variable winner if computerScore is higher than playerScore otherwiser assign "player"
+        output "
+            The Final Score => player ${playerScore} : ${computerScore} computer
+
+            And the winner is ${winner}
+        "
+    else output "It's a draw"
