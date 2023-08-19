@@ -1,35 +1,35 @@
-getComputerChoice()
-create a list called choices that contains "rock", "paper", and "scissors"
-create a variable called randomNumber of type number that starts with a random number between 0 and 2
-return an item at index randomNumber of choices
+DEFINE getComputerChoice() => STRING
+    create a list called choices that contains "rock", "paper", and "scissors"
+    create a variable called randomNumber of type number that starts with a random number between 0 and 2
+    return an item at index randomNumber of choices
+END
 
 =================================================================
 
-create a function called getWinner that takes in playerSelection and computerSelection and returns a string that declares the winner
-getWinner(playerSelection, computerSelection)
+DEFINE getWinner(playerSelection, computerSelection) => STRING
+    if (computerSelection === "rock" and playerSelection === "scissors"
+    or computerSelection === "paper" and playerSelection === "rock"
+    or computerSelection === "scissors" and playerSelection === "paper") then
+    
+        return "computer"
 
-if (computerSelection === "rock" and playerSelection === "scissors"
-   or computerSelection === "paper" and playerSelection === "rock"
-   or computerSelection === "scissors" and playerSelection === "paper") then
-   
-    return "computer"
+    else if (computerSelection === "rock" and playerSelection === "paper"
+    or computerSelection === "paper" and playerSelection === "scissors"
+    or computerSelection === "scissors" and playerSelection === "rock") then
 
-else if (computerSelection === "rock" and playerSelection === "paper"
-   or computerSelection === "paper" and playerSelection === "scissors"
-   or computerSelection === "scissors" and playerSelection === "rock") then
-
-    return "player"
+        return "player"
+END
 
 =================================================================
 
-create a function called playRound that takes in playerSelection and computerSelection and returns the winner
+DEFINE playRound(playerSelection, computerSelection) =>  UNDEFINED
+    create a constant variable called winner of type string that contains results from getWinner()
 
-create a constant variable called winner of type string that contains results from getWinner()
+    if playerSelection === computerSelection then
+        console log "It's a draw"
 
-if playerSelection === computerSelection then
-    console log "It's a draw"
+    else if winner === "computer" then
+        console log "You lose! ${computerSelection} beats ${playerSelection}"
 
-else if winner === "computer" then
-    console log "You lose! ${computerSelection} beats ${playerSelection}"
-
-else console log "You win! ${playerSelection} beats ${computerSelection}"
+    else console log "You win! ${playerSelection} beats ${computerSelection}"
+END
