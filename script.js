@@ -98,3 +98,5 @@ const game = () => {
 
   else console.log("It's a draw!");
 }
+
+game();
