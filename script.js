@@ -30,6 +30,11 @@ const getWinner = (playerSelection, computerSelection) => {
   else return "draw";
 }
 
+const displayResult = (result) => {
+  const resultDisplay = document.querySelector('.result-display');
+  resultDisplay.textContent = result;
+}
+
 // create a function called playRound that takes in playerSelection and computerSelection and returns a string that declares the winner
 const playRound = (playerSelection, computerSelection) => {
   const winner = getWinner(playerSelection, computerSelection);
@@ -99,4 +104,14 @@ const game = () => {
   else console.log("It's a draw!");
 }
 
-game();
+// game();
+
+const playButtons = document.querySelectorAll('button');
+
+playButtons.forEach((playButton) => {
+  playButton.addEventListener('click', () => {
+    const playerSelection = playButton.dataset.hand;
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
+  });
+})
