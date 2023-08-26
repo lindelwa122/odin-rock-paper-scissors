@@ -40,15 +40,15 @@ const playRound = (playerSelection, computerSelection) => {
   const winner = getWinner(playerSelection, computerSelection);
 
   if (winner === "draw") {
-    console.log("It's a draw");
+    displayResult("It's a draw");
   }
   
   else if (winner === "computer") {
-    console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
+    displayResult(`You lose! ${computerSelection} beats ${playerSelection}`);
   }
   
   else {
-    console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+    displayResult(`You win! ${playerSelection} beats ${computerSelection}`);
   }
 }
 
