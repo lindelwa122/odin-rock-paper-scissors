@@ -89,6 +89,16 @@ const game = (playerSelection, computerSelection) => {
   else if (winner === "player") playerScore++;
 }
 
+const updateUI = () => {
+  const playerScoreUI = document.querySelector('.player-score');
+  const computerScoreUI = document.querySelector('.computer-score');
+  const roundUI = document.querySelector('.round');
+
+  playerScoreUI.textContent = playerScore;
+  computerScoreUI.textContent = computerScore;
+  roundUI.textContent = round;
+}
+
 // game();
 
 const playButtons = document.querySelectorAll('button');
@@ -99,5 +109,6 @@ playButtons.forEach((playButton) => {
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
     game(playerSelection, computerSelection);
+    updateUI();
   });
 })
