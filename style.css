@@ -21,6 +21,10 @@ button {
   font-size: 21px;
 }
 
+.d-none {
+  display: none;
+}
+
 .winner-display {
   font-size: 25px;
   font-weight: 700;
