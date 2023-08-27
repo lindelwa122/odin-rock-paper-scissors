@@ -8,6 +8,7 @@ body {
   align-items: center;   
   background: url("images/background.jpg") no-repeat 50% 50%;
   background-size: 100% 100%;
+  color: #fafafa;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -27,7 +28,7 @@ button {
 }
 
 .score-board {
-  border: 5px solid #000;
+  border: 5px solid #fafafa;
   border-radius: 10px;
   padding: 20px;
   text-align: center;
