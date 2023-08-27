@@ -11,6 +11,7 @@ body {
 body, 
 button {
   font-family: 'Inter', sans-serif;
+  font-size: 21px;
 }
 
 .score-board {
