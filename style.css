@@ -23,6 +23,7 @@ body {
 
 .play-buttons-wrapper {
   display: flex;
+  gap: 20px;
 }
 
 .play-buttons-wrapper img {
