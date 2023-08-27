@@ -74,7 +74,7 @@ const getUserHandShape = () => {
 
 let computerScore = 0;
 let playerScore = 0;
-let round = 0;
+let round = 1;
 
 const game = (playerSelection, computerSelection) => {
   let winner;
