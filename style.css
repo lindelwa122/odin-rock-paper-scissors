@@ -3,6 +3,7 @@ body {
   display: flex;
   flex-direction: column;
   padding-top: 100px;
+  gap: 20px;
 }
 
 .score-board {
