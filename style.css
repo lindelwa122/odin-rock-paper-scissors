@@ -6,4 +6,5 @@ body {
 
 .score-board {
   border: 5px solid #000;
+  padding: 20px;
 }
