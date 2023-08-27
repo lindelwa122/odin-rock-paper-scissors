@@ -79,9 +79,7 @@ let round = 0;
 const game = (playerSelection, computerSelection) => {
   let winner;
 
-  if (++round === 6) {
-    // TODO
-  }
+  if (++round > 5) return;
 
   winner = getWinner(playerSelection, computerSelection);
 
@@ -107,8 +105,8 @@ playButtons.forEach((playButton) => {
   playButton.addEventListener('click', () => {
     const playerSelection = playButton.dataset.hand;
     const computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
+    round <= 5 && playRound(playerSelection, computerSelection);
     game(playerSelection, computerSelection);
-    updateUI();
+    round <= 5 && updateUI();
   });
 })
