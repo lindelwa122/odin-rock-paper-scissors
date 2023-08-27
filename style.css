@@ -13,3 +13,8 @@ body {
 .score-board img {
   width: 50px;
 }
+
+.score {
+  display: flex;
+  align-items: center;
+}
