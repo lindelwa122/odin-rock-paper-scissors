@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700;800;900&display=swap');
+
 body {
   align-items: center;   
   display: flex;
   flex-direction: column;
   padding-top: 100px;
   gap: 20px;
+}
+
+body, 
+button {
+  font-family: 'Inter', sans-serif;
 }
 
 .score-board {
