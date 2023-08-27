@@ -7,12 +7,11 @@ html, body {
 body {
   align-items: center;   
   background: url("images/background.jpg") no-repeat 50% 50%;
-  background-size: 100% 100%;
   color: #fafafa;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   overflow: hidden;
-  padding-top: 100px;
   gap: 20px;
 }
 
