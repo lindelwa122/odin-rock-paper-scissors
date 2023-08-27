@@ -21,6 +21,7 @@ button {
 
 .score-board {
   border: 5px solid #000;
+  border-radius: 10px;
   padding: 20px;
   text-align: center;
 }
