@@ -106,10 +106,25 @@ const updateUI = () => {
   if (round > 5) {
     const winnerDisplay = document.querySelector('.winner-display');
     winnerDisplay.textContent = getFinalResults();
+    toggleVisibilityOnResetButton();
     return;
   }
 
   roundUI.textContent = round;
+}
+
+const resetGame = () => {
+  computerScore = 0;
+  playerScore = 0;
+  round = 1;
+
+  const winnerDisplay = document.querySelector('.winner-display');
+  const resultDisplay = document.querySelector('.result-display');
+
+  winnerDisplay.textContent = '';
+  resultDisplay.textContent = '';
+
+  updateUI();
 }
 
 // game();
@@ -127,3 +142,14 @@ playButtons.forEach((playButton) => {
     updateUI();
   });
 })
+
+const toggleVisibilityOnResetButton = () => {
+  const resetButton = document.querySelector('.reset');
+  resetButton.classList.toggle('d-none');
+}
+
+const resetButton = document.querySelector('.reset');
+resetButton.addEventListener('click', () => {
+  resetGame();
+  toggleVisibilityOnResetButton();
+});
