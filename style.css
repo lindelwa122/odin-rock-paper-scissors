@@ -22,3 +22,7 @@ body {
 .play-buttons-wrapper {
   display: flex;
 }
+
+.play-buttons-wrapper img {
+  width: 100px;
+}
