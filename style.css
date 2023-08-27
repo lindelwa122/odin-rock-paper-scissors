@@ -26,3 +26,9 @@ body {
 .play-buttons-wrapper img {
   width: 100px;
 }
+
+.play-button {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
