@@ -9,8 +9,8 @@ const getComputerChoice = () => {
   return choices[randomNumber];
 }
 
-// create a function called getWinner that takes in playerSelection and computerSelection and returns a string that declares the winner
-const getWinner = (playerSelection, computerSelection) => {
+// create a function called getRoundWinner that takes in playerSelection and computerSelection and returns a string that declares the winner
+const getRoundWinner = (playerSelection, computerSelection) => {
   if 
     (
       (computerSelection === "rock" && playerSelection === "scissors")
@@ -37,7 +37,7 @@ const displayResult = (result) => {
 
 // create a function called playRound that takes in playerSelection and computerSelection and returns a string that declares the winner
 const playRound = (playerSelection, computerSelection) => {
-  const winner = getWinner(playerSelection, computerSelection);
+  const winner = getRoundWinner(playerSelection, computerSelection);
 
   if (winner === "draw") {
     displayResult("It's a draw");
@@ -79,12 +79,20 @@ let round = 1;
 const game = (playerSelection, computerSelection) => {
   let winner;
 
-  if (++round > 5) return;
+  if (round++ > 5) return;
 
-  winner = getWinner(playerSelection, computerSelection);
+  winner = getRoundWinner(playerSelection, computerSelection);
 
   if (winner === "computer") computerScore++;
   else if (winner === "player") playerScore++;
+}
+
+const getFinalResults = () => {
+  if (computerScore > playerScore) {
+    return 'You lost!';
+  } else if (computerScore < playerScore) {
+    return 'You won!';
+  } else return 'It\'s a draw!';
 }
 
 const updateUI = () => {
@@ -94,6 +102,13 @@ const updateUI = () => {
 
   playerScoreUI.textContent = playerScore;
   computerScoreUI.textContent = computerScore;
+  
+  if (round > 5) {
+    const winnerDisplay = document.querySelector('.winner-display');
+    winnerDisplay.textContent = getFinalResults();
+    return;
+  }
+
   roundUI.textContent = round;
 }
 
@@ -103,10 +118,12 @@ const playButtons = document.querySelectorAll('button');
 
 playButtons.forEach((playButton) => {
   playButton.addEventListener('click', () => {
+    if (round > 5) return; 
+
     const playerSelection = playButton.dataset.hand;
     const computerSelection = getComputerChoice();
-    round <= 5 && playRound(playerSelection, computerSelection);
+    playRound(playerSelection, computerSelection);
     game(playerSelection, computerSelection);
-    round <= 5 && updateUI();
+    updateUI();
   });
 })
