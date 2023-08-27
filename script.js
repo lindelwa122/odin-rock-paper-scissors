@@ -114,7 +114,7 @@ const updateUI = () => {
 
 // game();
 
-const playButtons = document.querySelectorAll('button');
+const playButtons = document.querySelectorAll('.play-button');
 
 playButtons.forEach((playButton) => {
   playButton.addEventListener('click', () => {
